@@ -12,6 +12,7 @@ def animatedMenu
 		when 'list' then showList
 		when 'error' then error
 		when 'success' then success
+		when 'blink' then blink
 		when 'progress' then progressAni
 		else _show ""
 		end
@@ -42,11 +43,12 @@ end
 def showList
 	_show '''
 		Here are options to type:
-		1_ list
-		2_ error
-		3_ progress
-		4_ success
-		5_ exit
+		>_ list
+		>_ error
+		>_ progress
+		>_ success
+		>_ exit
+		>_ blink
 		'''
 end
 
@@ -55,7 +57,11 @@ def error
 end
 
 def success
-	_show "Here is one example of an error".white.on_green.blink
+	_show "Here is one example of an success".white.on_green
+end
+
+def blink
+	_show "wow such msg".blink
 end
 
 def progressAni
